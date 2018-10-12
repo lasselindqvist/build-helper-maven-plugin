@@ -737,6 +737,38 @@ tomcat.http.port
 </project>
 -------------------
 
+* Determine if the current version is a release version
+
+  The <<<is-release>>> goal can be used to determine if the current version of the project is a release version
+
+-------------------
+<project>
+  ...
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>build-helper-maven-plugin</artifactId>
+        <version>${project.version}</version>
+        <executions>
+          <execution>
+            <id>get-is-release</id>
+            <goals>
+              <goal>is-release</goal>
+            </goals>
+            <configuration>
+              <!-- if not given, 'is.release' name is used -->
+              <isRelease>my.is.release</isRelease>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+  ...
+</project>
+-------------------
+
 * Set a property according to whether target files are up to date with respect to their sources 
 
   'Up to date' means that the target file both exists and has a 'last modification timestamp' (<<<java.io.File.lastModified()>>>)

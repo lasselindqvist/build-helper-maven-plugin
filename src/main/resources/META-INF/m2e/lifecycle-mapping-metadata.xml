@@ -10,6 +10,7 @@
           <goal>add-test-source</goal>
           <goal>bsh-property</goal>
           <goal>cpu-count</goal>
+          <goal>is-release</goal>
           <goal>local-ip</goal>
           <goal>maven-version</goal>
           <goal>parse-version</goal>
